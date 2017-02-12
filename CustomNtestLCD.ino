@@ -154,13 +154,13 @@ void loop()
   NouvelAppui = false;
 
    if ((!K1) && (!K2) && (!K3) && (!K4))  
-      { Kon = false; };               // si aucun bouton appuyé : raz des push
+      { Kon = false; AppuiLong = false;};               // si aucun bouton appuyé : raz des push
   
    if ((K1) or (K2) or (K3) or (K4))                   // si un bouton appuyé :
       { 
       if (!Kon){NouvelAppui = true; DebutAppui = millis();};
       Kon = true;
-      if  ( (millis()- DebutAppui) > 2000 ){AppuiLong = true;};    // appui maintenu si 2s sans relacher :
+      if  ( (millis()- DebutAppui) > 1500 ){AppuiLong = true;};    // appui maintenu si 2s sans relacher :
       };
 
 if ((NouvelAppui) or (AppuiLong))
